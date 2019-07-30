@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Ruby internal
+require 'pp'
+# Project internal
+require 'bigipcookie'
+# External
+require 'docopt'
+require 'paint'
+
+doc = <<~DOCOPT
+  RABID (RApid Big IP Decoder)
+
+  Usage:
+    rabid [options] <raw_cookie>
+    rabid -h | --help
+    rabid --version
+
+  Options:
+    --ipv6-long-format  Display IPv6 address in long format
+    --no-color          Disable colorized output
+    --short             Display in a short format: display only decoded cookies
+    --debug             Display arguments
+    -h, --help          Show this screen
+    --version           Show version
+
+  Examples:
+    rabid 'BIGipServer<pool_name>=1677787402.36895.0000' --no-color --short
+    rabid 'rd5o00000000000000000000ffffc0000201o80'
+    rabid 'CustomeCookieName=vi20010112000000000000000000000030.20480' --ipv6-long-format
+    rabid 'BIGipServer~SuperPool=rd3o20010112000000000000000000000030o80' --debug
+DOCOPT
+
+begin
+  args = Docopt.docopt(doc, version: BigIPCookie::VERSION)
+  pp args if args['--debug']
+  # use case 1, using the tool
+  if args['<raw_cookie>']
+    bip = BigIPCookie::Decode.new(args['<raw_cookie>'])
+    opts = {}
+    opts[:ipv6compression] = 0 if args['--ipv6-long-format']
+    bip.auto_decode(opts)
+    # Display
+    if args['--no-color']
+      if args['--short']
+        puts bip.decoded_cookie
+      else
+        puts "Pool name: #{bip.pool_name}"
+        puts "Cookie type: #{bip.cookie_type}"
+        puts "Raw cookie: #{bip.raw_cookie}"
+        puts "Decoded cookie: #{bip.decoded_cookie}"
+      end
+    elsif args['--short']
+      puts Paint[bip.decoded_cookie, :green]
+    else
+      puts Paint['Pool name:', :white, :bold] + ' ' + bip.pool_name
+      puts Paint['Cookie type:', :white, :bold] + ' ' + bip.cookie_type
+      puts Paint['Raw cookie:', :white, :bold] + ' ' + bip.raw_cookie
+      puts Paint['Decoded cookie:', :white, :bold] + ' ' + Paint[bip.decoded_cookie, :green]
+    end
+  end
+  # use case 2, help: already handled by docopt
+  # use case 3, version: already handled by docopt
+rescue Docopt::Exit => e
+  puts e.message
+end
