@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
                     ' of BigIP cookies'
   s.authors       = ['Alexandre ZANNI']
   s.email         = 'alexandre.zanni@engineer.com'
-  s.homepage      = 'XXX'
+  s.homepage      = 'https://orange-cyberdefense.github.io/rabid/'
   s.license       = 'MIT'
 
   s.files         = `git ls-files`.split("\n")
@@ -27,9 +27,9 @@ Gem::Specification.new do |s|
   s.metadata = {
     'yard.run'          => 'yard',
     'bug_tracker_uri'   => 'https://github.com/Orange-Cyberdefense/rabid/issues',
-    'changelog_uri'     => 'XXX',
-    'documentation_uri' => 'XXX',
-    'homepage_uri'      => 'XXX',
+    'changelog_uri'     => 'https://github.com/Orange-Cyberdefense/rabid/blob/master/docs/CHANGELOG.md',
+    'documentation_uri' => 'https://orange-cyberdefense.github.io/rabid/',
+    'homepage_uri'      => 'https://orange-cyberdefense.github.io/rabid/',
     'source_code_uri'   => 'https://github.com/Orange-Cyberdefense/rabid/',
   }
 

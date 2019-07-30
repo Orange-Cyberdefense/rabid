@@ -15,7 +15,7 @@ $ docsify serve docs
 
 The output directory of the library documentation will be `docs/yard`.
 
-You can consult it online [here](yard).
+You can consult it online [here](rabid/yard/).
 
 ### Building locally: for library users
 
