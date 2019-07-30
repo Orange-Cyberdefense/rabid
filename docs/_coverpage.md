@@ -1,4 +1,4 @@
-![](_media/logo.png)
+![](https://orange-cyberdefense.github.io/rabid/_media/logo.png)
 
 # RABID
 
