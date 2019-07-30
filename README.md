@@ -1,6 +1,6 @@
 # RABID
 
-![](_media/logo.png)
+![](https://orange-cyberdefense.github.io/rabid/_media/logo.png)
 
 > **RA**pid **B**ig **I**P **D**ecoder
 
