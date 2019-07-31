@@ -1,5 +1,11 @@
 # RABID
 
+[![Gem Version](https://badge.fury.io/rb/rabid.svg)](https://badge.fury.io/rb/rabid)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/Orange-Cyberdefense/rabid)
+[![GitHub forks](https://img.shields.io/github/forks/Orange-Cyberdefense/rabid)](https://github.com/Orange-Cyberdefense/rabid/network)
+[![GitHub stars](https://img.shields.io/github/stars/Orange-Cyberdefense/rabid)](https://github.com/Orange-Cyberdefense/rabid/stargazers)
+[![GitHub license](https://img.shields.io/github/license/Orange-Cyberdefense/rabid)](https://github.com/Orange-Cyberdefense/rabid/blob/master/LICENSE.txt)
+
 ![](https://orange-cyberdefense.github.io/rabid/_media/logo.png)
 
 > **RA**pid **B**ig **I**P **D**ecoder
