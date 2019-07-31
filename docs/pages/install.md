@@ -8,6 +8,8 @@
 $ gem install rabid
 ```
 
+Gem: [rabid](https://rubygems.org/gems/rabid)
+
 ### Install from BlackArch
 
 ```
