@@ -63,7 +63,7 @@ $ git clone https://github.com/Orange-Cyberdefense/rabid.git rabid
 $ cd rabid
 $ gem install bundler
 $ bundler install
-$ gem build rabid.gemspec
+$ gem build bigipcookie.gemspec
 $ gem install rabid-x.x.x.gem
 ```
 
