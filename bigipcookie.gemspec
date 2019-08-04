@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.files         = Rake::FileList['**/*'].exclude(*File.read('.gitignore').split)
+  s.files         += Rake::FileList['**/.*'].exclude(*File.read('.gitignore').split)
   s.bindir        = 'bin'
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test)/})

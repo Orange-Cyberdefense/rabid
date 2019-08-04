@@ -5,3 +5,4 @@
 /vendor
 .bundle/
 /node_modules
+.git
