@@ -3,7 +3,6 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'bigipcookie/version'
-require 'rake/file_list'
 
 Gem::Specification.new do |s|
   s.name          = 'rabid'
@@ -18,8 +17,12 @@ Gem::Specification.new do |s|
   s.homepage      = 'https://orange-cyberdefense.github.io/rabid/'
   s.license       = 'MIT'
 
-  s.files         = Rake::FileList['**/*'].exclude(*File.read('.gitignore').split)
-  s.files         += Rake::FileList['**/.*'].exclude(*File.read('.gitignore').split)
+  s.files         = Dir['bin/*'] + Dir['docs/**/*'] + Dir['lib/**/*.rb']
+  s.files         += Dir['test/*.rb']
+  s.files         += ['docs/.nojekyll', 'package-lock.json', 'Rakefile']
+  s.files         += ['README.md', 'LICENSE.txt', 'Gemfile.lock', 'Gemfile']
+  s.files         += ['.yardopts-dev', '.yardopts', '.rubocop.yml']
+  s.files         += ['.gitignore']
   s.bindir        = 'bin'
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test)/})
