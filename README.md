@@ -6,6 +6,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/Orange-Cyberdefense/rabid)](https://github.com/Orange-Cyberdefense/rabid/stargazers)
 [![GitHub license](https://img.shields.io/github/license/Orange-Cyberdefense/rabid)](https://github.com/Orange-Cyberdefense/rabid/blob/master/LICENSE.txt)
 
+[![Packaging status](https://repology.org/badge/vertical-allrepos/rabid.svg)](https://repology.org/project/rabid/versions)
+
 ![](https://orange-cyberdefense.github.io/rabid/_media/logo.png)
 
 > **RA**pid **B**ig **I**P **D**ecoder
