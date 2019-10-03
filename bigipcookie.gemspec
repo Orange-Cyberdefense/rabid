@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('paint', '~> 2.1') # for colorized ouput
 
   s.add_development_dependency('bundler', '~> 2.0')
-  s.add_development_dependency('commonmarker', '~> 0.18') # for GMF support in YARD
+  s.add_development_dependency('commonmarker', '~> 0.20') # for GMF support in YARD
   s.add_development_dependency('github-markup', '~> 3.0') # for GMF support in YARD
   s.add_development_dependency('minitest', '~> 5.11')
   s.add_development_dependency('rake', '~> 12.3')
