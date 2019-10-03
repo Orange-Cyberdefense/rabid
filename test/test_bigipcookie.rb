@@ -62,4 +62,15 @@ class BigIPCookieTest < Minitest::Test
     # Cookie type
     assert_equal('Encrypted', bip.cookie_type)
   end
+
+  def test_encrypted_2
+    bip = BigIPCookie::Decode.new('BIGipServerhttp-pool=!VGVzdCBzdHJpbmcgMiBlcXVhbCBzaWducw==')
+    bip.auto_decode
+    # Decoded cookie
+    assert_equal('Unknown:Encrypted', bip.decoded_cookie)
+    # Pool name
+    assert_equal('http-pool', bip.pool_name)
+    # Cookie type
+    assert_equal('Encrypted', bip.cookie_type)
+  end
 end

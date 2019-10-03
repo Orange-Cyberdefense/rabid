@@ -224,7 +224,7 @@ class BigIPCookie
     #   cookie name is used or if no cookie key was provided
     # @return the pool name
     def retrieve_pool_name
-      pool_name = /BIGipServer(.+)=.+/.match(@raw_cookie).captures[0]
+      pool_name = /BIGipServer(.*?)=.+/.match(@raw_cookie).captures[0]
       return pool_name
     end
 
@@ -237,11 +237,11 @@ class BigIPCookie
       if /\=/.match?(@raw_cookie) # if there is a key
         if /^BIGipServer/.match?(@raw_cookie) # if default cookie name
           pool_name = retrieve_pool_name
-          cookie_value = /^BIGipServer.+=(.+)/.match(@raw_cookie).captures[0]
+          cookie_value = /^BIGipServer.*?=(.+)/.match(@raw_cookie).captures[0]
           decoded_cookie = decode_cookie(cookie_value, opts)
           @pool_name = pool_name
         else # custom cookie name
-          cookie_value = /.+=(.+)/.match(@raw_cookie).captures[0]
+          cookie_value = /.*?=(.+)/.match(@raw_cookie).captures[0]
           decoded_cookie = decode_cookie(cookie_value, opts)
           @pool_name = 'unknown'
         end
