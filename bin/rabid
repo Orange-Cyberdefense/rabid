@@ -30,6 +30,7 @@ doc = <<~DOCOPT
     rabid 'rd5o00000000000000000000ffffc0000201o80'
     rabid 'CustomeCookieName=vi20010112000000000000000000000030.20480' --ipv6-long-format
     rabid 'BIGipServer~SuperPool=rd3o20010112000000000000000000000030o80' --debug
+    rabid 'BIGipServerhttp-pool=!LHmYFDA0qZyj4NoylBEaDn0/k2wesiGt0ANZhWaAohjULoWFXRc1b/yfibypy1qfBzD51kqvmwzfcy4='
 DOCOPT
 
 begin

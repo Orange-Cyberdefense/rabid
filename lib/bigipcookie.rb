@@ -164,6 +164,13 @@ class BigIPCookie
       return "[#{ip}%#{id}]:#{port}"
     end
 
+    # Return that the cookie is encrypted
+    # @param cookie [String] raw cookie value
+    # @return [String] Encrypted cookie detection message
+    def encrypted(cookie)
+      return 'Unknown:Encrypted'
+    end
+
     # Automatically detect the BigIP cookie type
     # @param cookie [String] raw cookie value
     # @return [Integer] detected cookie code (mapped with {decode_cookie})
@@ -180,6 +187,9 @@ class BigIPCookie
 
       ## IPv6 pool members in non-default route domains
       return 601 if /rd([0-9]+)o([0-9a-zA-Z]{32})o([0-9]{1,5})/.match?(cookie)
+
+      ## Encrypted
+      return 999 if /!(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?/.match?(cookie)
 
       raise 'Unrecognized cookie'
     end
@@ -202,6 +212,9 @@ class BigIPCookie
       elsif number == 601
         @cookie_type = 'IPv6 pool members in non-default route domains'
         ipv6_pm_ndrd(cookie, opts)
+      elsif number == 999
+        @cookie_type = 'Encrypted'
+        encrypted(cookie)
       else
         raise "Wrong cookie type numer: #{number}"
       end
@@ -241,6 +254,6 @@ class BigIPCookie
 
     private :retrieve_pool_name, :decode_cookie, :detect_cookie_type,
             :ipv6_pm_ndrd, :ipv6_pm, :ipv4_pm_ndrd, :ipv4_pm, :decode_port,
-            :decode_ip
+            :decode_ip, :encrypted
   end
 end
