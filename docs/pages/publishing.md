@@ -3,7 +3,7 @@
 ## On Rubygems.org
 
 ```
-$ git tag vx.x.x
+$ git tag -a vx.x.x
 $ git push --follow-tags
 $ gem push rabid-x.x.x.gem
 ```
