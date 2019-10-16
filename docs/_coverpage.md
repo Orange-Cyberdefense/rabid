@@ -8,7 +8,7 @@
 - CLI tool & library
 - Hackable
 
-[GitHub]()
+[GitHub](https://github.com/Orange-Cyberdefense/rabid/)
 [Get Started](pages/quick-start?id=quick-start)
 
 ![color](#ffffff)
