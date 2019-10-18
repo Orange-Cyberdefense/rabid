@@ -5,6 +5,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/Orange-Cyberdefense/rabid)](https://github.com/Orange-Cyberdefense/rabid/network)
 [![GitHub stars](https://img.shields.io/github/stars/Orange-Cyberdefense/rabid)](https://github.com/Orange-Cyberdefense/rabid/stargazers)
 [![GitHub license](https://img.shields.io/github/license/Orange-Cyberdefense/rabid)](https://github.com/Orange-Cyberdefense/rabid/blob/master/LICENSE.txt)
+[![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.rawsec.ml/tools.html#Rabid)
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/rabid.svg)](https://repology.org/project/rabid/versions)
 
