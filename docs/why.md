@@ -21,6 +21,7 @@ RABID                                  | :heavy_check_mark: | :heavy_check_mark:
 [drwetter/F5-BIGIP-Decoder][10]        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:         | :heavy_check_mark: | :x:                | :x:                |
 [f5_bigip_cookie_disclosure][11] (msf) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                        | :o:                | :o:                | :x:                | only on live targets
 [http-bigip-cookie][12] (nse)          | :heavy_check_mark: | :x:                | :x:                | :x:                | :x:                        | :heavy_check_mark: | :x:                | :x:                | only on live targets
+[Cookie Decrypter][13] (Burp)          | :heavy_check_mark: | :x:                | :x:                | :x:                | :x:                        | :x: | :x:                | :x:                | only on live targets
 
 Legend:
 
@@ -45,3 +46,4 @@ Legend:
 [10]:https://github.com/drwetter/F5-BIGIP-Decoder
 [11]:https://www.rapid7.com/db/modules/auxiliary/gather/f5_bigip_cookie_disclosure
 [12]:https://nmap.org/nsedoc/scripts/http-bigip-cookie.html
+[13]:https://github.com/SolomonSklash/cookie-decrypter
