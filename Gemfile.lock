@@ -23,7 +23,7 @@ GEM
     parser (2.6.3.0)
       ast (~> 2.4.0)
     rainbow (3.0.0)
-    rake (12.3.2)
+    rake (13.0.0)
     redcarpet (3.4.0)
     rubocop (0.73.0)
       jaro_winkler (~> 1.5.1)
@@ -47,7 +47,7 @@ DEPENDENCIES
   github-markup (~> 3.0)
   minitest (~> 5.11)
   rabid!
-  rake (~> 12.3)
+  rake (~> 13.0)
   redcarpet (~> 3.4)
   rubocop (~> 0.63)
   yard (~> 0.9)
