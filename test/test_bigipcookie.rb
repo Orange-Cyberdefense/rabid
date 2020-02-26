@@ -6,6 +6,7 @@ require 'bigipcookie'
 class BigIPCookieTest < Minitest::Test
   # IPv4 pool members, with pool name
   def test_bigipcookie_decode_ipv4_pm
+    # Size (ip/port) 10 + 5
     bip = BigIPCookie::Decode.new('BIGipServer<pool_name>=1677787402.36895.0000')
     bip.auto_decode
     # Decoded cookie
@@ -14,6 +15,15 @@ class BigIPCookieTest < Minitest::Test
     assert_equal('<pool_name>', bip.pool_name)
     # Cookie type
     assert_equal('IPv4 pool members', bip.cookie_type)
+    # Test cookie with different encoded lenght
+    # Size (ip/port) 9 + 5
+    bip = BigIPCookie::Decode.new('135851530.20480.0000')
+    bip.auto_decode
+    assert_equal('10.238.24.8:80', bip.decoded_cookie)
+    # Size (ip/port) 8 + 0
+    bip = BigIPCookie::Decode.new('34467338.0.0000')
+    bip.auto_decode
+    assert_equal('10.238.13.2:0', bip.decoded_cookie)
   end
 
   # IPv4 pool members in non-default route domains, only cookie value

@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name          = 'rabid'
   s.version       = Version::VERSION
   s.platform      = Gem::Platform::RUBY
-  s.date          = '2019-10-03'
+  s.date          = '2020-02-26'
   s.summary       = 'RApid Big IP Decoder'
   s.description   = 'A library and CLI tool allowing to decode all 4 types'\
                     ' of BigIP cookies'

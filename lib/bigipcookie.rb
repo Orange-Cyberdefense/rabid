@@ -94,6 +94,7 @@ class BigIPCookie
       end
 
       ip = format('%02x', ip) if opts[:ip2hex] == 1 # ip to hex
+      ip = '0' + ip if ip.size % 2 == 1 # prepend a 0 when we have an odd number
       ip = ip.scan(/.{#{opts[:scanby]}}/) # split by n
       ip.reverse! if opts[:reverse] == 1 # reverse array
       ip = ip.map { |i| i.to_i(16) } if opts[:hex2ip] == 1 # hex to ip
@@ -176,7 +177,7 @@ class BigIPCookie
     # @return [Integer] detected cookie code (mapped with {decode_cookie})
     def detect_cookie_type(cookie)
       ## IPv4 pool members
-      return 400 if /[0-9]{10}\.[0-9]{5}\.0000/.match?(cookie)
+      return 400 if /[0-9]{1,10}\.[0-9]{1,7}\.0000/.match?(cookie)
 
       ## IPv4 pool members in non-default route domains
       return 401 if /rd([0-9]+)o00000000000000000000ffff([0-9a-zA-Z]{8})o
