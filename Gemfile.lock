@@ -3,7 +3,7 @@ PATH
   specs:
     rabid (0.0.5)
       docopt (~> 0.6)
-      paint (~> 2.1)
+      paint (~> 2.2)
 
 GEM
   remote: https://rubygems.org/
@@ -44,14 +44,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 2.0)
-  commonmarker (~> 0.20)
+  bundler (~> 2.1)
+  commonmarker (~> 0.21)
   github-markup (~> 3.0)
   minitest (~> 5.11)
   rabid!
   rake (~> 13.0)
   redcarpet (~> 3.4)
-  rubocop (~> 0.63)
+  rubocop (~> 0.80)
   yard (~> 0.9)
 
 BUNDLED WITH
