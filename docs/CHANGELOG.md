@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+
+- bin: code simplification & lint
+
 ## [0.0.5]
 
 - Fix a case when the encoded IP address in IPv4 pool members was decoded to an odd hexadecimal number resulting in a malformated IP address

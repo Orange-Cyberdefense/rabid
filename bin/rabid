@@ -35,6 +35,7 @@ DOCOPT
 
 begin
   args = Docopt.docopt(doc, version: BigIPCookie::VERSION)
+  Paint.mode = 0 if args['--no-color']
   pp args if args['--debug']
   # use case 1, using the tool
   if args['<raw_cookie>']
@@ -43,16 +44,7 @@ begin
     opts[:ipv6compression] = 0 if args['--ipv6-long-format']
     bip.auto_decode(opts)
     # Display
-    if args['--no-color']
-      if args['--short']
-        puts bip.decoded_cookie
-      else
-        puts "Pool name: #{bip.pool_name}"
-        puts "Cookie type: #{bip.cookie_type}"
-        puts "Raw cookie: #{bip.raw_cookie}"
-        puts "Decoded cookie: #{bip.decoded_cookie}"
-      end
-    elsif args['--short']
+    if args['--short']
       puts Paint[bip.decoded_cookie, :green]
     else
       puts Paint['Pool name:', :white, :bold] + ' ' + bip.pool_name
